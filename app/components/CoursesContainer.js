@@ -14,7 +14,7 @@ export default class CoursesContainer extends Component {
               <CourseCard
                 subject={course.subject} 
                 description={course.description}
-                image={course.image} 
+                image={course.image}
                 progress={course.progress} 
                 color={course.color} 
                 key={course.id} 

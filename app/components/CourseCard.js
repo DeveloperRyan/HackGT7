@@ -17,7 +17,7 @@ export default class CourseCard extends Component {
                     <Text style={styles.progressText}>{this.state.progress}% Complete</Text>
                 </View>
                 <View style={styles.contentContainer}>
-                    <Image source={this.props.image}/>
+                    <Image source={{uri: this.props.image, width: 76, height: 76}}/>
                     <Text style={styles.description}>{this.props.description}</Text>
                     <GenericButton text="CONTINUE" type="unfilled" />
                 </View>
@@ -64,6 +64,7 @@ const styles = {
     },
     description: {
         color: "white",
+        marginVertical: 10,
         fontSize: 16
     }
 }
