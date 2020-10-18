@@ -5,17 +5,16 @@ export default class Goal extends Component {
     constructor (props) {
         super(props)
         this.state = {
-            goals: props.goals
+            goal: props.goal
         }
     }
     render() {
-        console.log(this.props)
         return (
             <View style={styles.container}>
-                <View style={[styles.checkbox, this.props.goal.item.isComplete ? styles.filled : null]} />
+                <View style={[styles.checkbox, this.state.goal.isComplete ? styles.filled : null]} />
                 <View style={styles.textContainer}>
-                    <Text style={styles.subject}>{this.props.goal.item.course}</Text>
-                    <Text style={styles.goal}>{this.props.goal.item.title}</Text>
+                    <Text style={styles.subject}>{this.state.goal.course}</Text>
+                    <Text style={styles.goal}>{this.state.goal.title}</Text>
                 </View>
             </View>
         )
