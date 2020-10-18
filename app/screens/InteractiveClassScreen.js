@@ -1,15 +1,37 @@
 import React from 'react';
-import { Text, View } from 'react-native';
-import Svg, {Path} from 'react-native-svg'
+import { Button, Dimensions, SafeAreaView, View } from 'react-native';
+import ClassroomHeader from '../components/ClassroomHeader.js'
+import VideoTile from '../components/VideoTile.js'
+import BookTile from '../components/BookTile.js'
+import SectionHeader from '../components/SectionHeader.js'
 
 function InteractiveClassScreen(props) {
     return (
-        <View>
-            <Svg width="414" height="121" viewBox="0 0 414 121" fill="red" style={{ justifyContent: "flex-start" }}>
-            <Path d="M414 0H0V87.6124C0 90.6026 2.20171 93.1364 5.16264 93.5537L191.09 119.758C201.645 121.245 212.355 121.245 222.91 119.758L408.837 93.5537C411.798 93.1364 414 90.6026 414 87.6124V0Z" fill="#2B2754"/>
-            </Svg>
-        </View>
+        <SafeAreaView style={styles.container}>
+            <ClassroomHeader title="Astronomy"/>
+            <SectionHeader title={"Videos"} />
+            <VideoTile image="https://i.imgur.com/x5Neg1z.png" title="Introduction to Astronomy" author="Crash Course"/>
+            <VideoTile image="https://i.imgur.com/xIAy1Xe.png" title="Asteroid Mining" author="Kurzgesagt"/>
+            <Button title="View 13 more..." />
+            <SectionHeader title={"Books"} />
+            <View style={{width: "90%", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
+                <BookTile image="https://i.imgur.com/tp5yRj7.png"/>
+                <BookTile image="https://i.imgur.com/tp5yRj7.png"/>
+                <BookTile image="https://i.imgur.com/tp5yRj7.png"/>
+            </View>
+            
+        </SafeAreaView>
     );
+}
+
+const styles = {
+    container: {
+        height: "100%",
+        width: Dimensions.get('window').width,
+        display: "flex",
+        alignItems: "center",
+        flex: 1,
+    }
 }
 
 export default InteractiveClassScreen;
