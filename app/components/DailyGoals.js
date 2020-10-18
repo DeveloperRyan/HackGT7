@@ -10,17 +10,21 @@ export default class DailyGoals extends Component {
         };
     }
 
+    renderCards = () => {
+        return (
+            this.state.goals.map((goal) => (
+                <Goal goal={goal} key={goal.id}/>
+            ))
+        );
+    }
+
     render() {
         return (
             <View style={styles.container}>
                 <Text style={{fontSize: 16, fontWeight: 'bold', color: '#2E2E2E'}}>
                     Your Daily Goals
                 </Text>
-                <FlatList
-                    data={this.state.goals}
-                    renderItem={(goal) => <Goal goal={goal} />}
-                    keyExtractor={(goal) => goal.id}
-                />
+                {this.renderCards()}
             </View>
         )
     }
