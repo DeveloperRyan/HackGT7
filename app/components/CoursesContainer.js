@@ -11,7 +11,14 @@ export default class CoursesContainer extends Component {
     render() {
         return (
             this.state.courses.map((course) => (
-              <CourseCard subject={course.subject} image={course.image} progress={course.progress} color={course.color} key={course.id} />
+              <CourseCard
+                subject={course.subject} 
+                description={course.description}
+                image={course.image} 
+                progress={course.progress} 
+                color={course.color} 
+                key={course.id} 
+                />
             ))
         );
     }
