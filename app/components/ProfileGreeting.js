@@ -10,23 +10,15 @@ export default class ProfileGreeting extends Component {
 
     render() {
         return (
-            <SafeAreaView style={styles.container}>
-                <View style={styles.greeting}>
-                    <Text style={styles.greetingTextLarge}>Hi Roman!</Text>
-                    <Text style={styles.greetingTextSmall}>Today is October 18th, 2020</Text>
-                </View>
-            </SafeAreaView>
+            <View style={styles.greeting}>
+                <Text style={styles.greetingTextLarge}>Hi Roman!</Text>
+                <Text style={styles.greetingTextSmall}>Today is October 18th, 2020</Text>
+            </View>
         )
     }
 }
 
 const styles = {
-    container: {
-        backgroundColor: "#F3F3F3",
-        height: "18%",
-        display: "flex",
-        justifyContent: "center"
-    },
     greeting: {
         display: "flex",
         justifyContent: "center",

@@ -28,8 +28,7 @@ export default class DailyGoals extends Component {
 
 const styles = {
     container: {
-        width: '100%',
-        paddingLeft: 15,
+        width: '90%',
         paddingVertical: 5
     }
 }

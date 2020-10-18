@@ -13,7 +13,10 @@ export default class Goal extends Component {
         return (
             <View style={styles.container}>
                 <View style={[styles.checkbox, this.props.goal.item.isComplete ? styles.filled : null]} />
-                <Text>{this.props.goal.item.title}</Text>
+                <View style={styles.textContainer}>
+                    <Text style={styles.subject}>{this.props.goal.item.course}</Text>
+                    <Text style={styles.goal}>{this.props.goal.item.title}</Text>
+                </View>
             </View>
         )
     }
@@ -36,6 +39,13 @@ const styles = {
         borderRadius: 6
     },
     filled: {
-        backgroundColor: '#3DE996'
+        backgroundColor: "#3DE996"
+    },
+    subject: {
+        fontWeight: "bold",
+        color: '#2E2E2E'
+    },
+    goal: {
+        color: '#2E2E2E'
     }
 }
