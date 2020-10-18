@@ -1,5 +1,5 @@
 import React, { Component } from 'react'
-import { TouchableHighlight, View } from 'react-native'
+import { TouchableHighlight, View, Text } from 'react-native'
 
 export default class GenericButton extends Component {
     render() {
@@ -7,7 +7,7 @@ export default class GenericButton extends Component {
             <View>
                 <TouchableHighlight>
                     <Text>
-                        { this.props.text }
+                        {this.props.text}
                     </Text>
                 </TouchableHighlight>
             </View>

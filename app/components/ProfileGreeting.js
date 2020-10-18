@@ -1,12 +1,13 @@
 import React, { Component } from 'react'
+import { Dimensions, Platform, SafeAreaView, StatusBar, Text, View } from 'react-native';
 
 export default class ProfileGreeting extends Component {
     constructor(props) {
         super(props);
         this.state = {
-            date: Date.now()
         };
     }
+
     render() {
         return (
             <SafeAreaView style={styles.container}>
@@ -19,32 +20,26 @@ export default class ProfileGreeting extends Component {
     }
 }
 
-import React from 'react';
-import { SafeAreaView, Text, View } from 'react-native';
-
 const styles = {
     container: {
-        backgroundColor: "red",
-        flex: 1,
-        alignItems: "center",
-        width: 500,
-        height: 500,
+        backgroundColor: "#F3F3F3",
+        height: "18%",
+        display: "flex",
+        justifyContent: "center"
     },
     greeting: {
-        backgroundColor: "blue",
         display: "flex",
         justifyContent: "center",
-        width: '100%',
-        height: '15%',
+        width: Dimensions.get('window').width,
+        paddingTop: Platform.OS === "android" ? StatusBar.currentHeight : 0,
         padding: 15
     },
     greetingTextLarge: {
         fontSize: 25,
-        fontWeight: 600,
-        color: '#fff'
+        color: '#2E2E2E'
     },
     greetingTextSmall: {
-        fontSize: 18,
-        color: '#fff'
+        fontSize: 13,
+        color: '#2E2E2E'
     }
 }
