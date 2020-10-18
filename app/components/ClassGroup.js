@@ -11,19 +11,11 @@ class ClassGroup extends React.Component {
         }
     }
 
-    styles = StyleSheet.create({ 
-        classContainer: {
-            flexDirection: "row-reverse",
-            flexWrap: "wrap-reverse",
-            justifyContent: "center"
-        },
-    })
-
     render() {
 
         
         return(
-        <View style={this.styles.classContainer}>
+        <View style={styles.classContainer}>
    
                     {this.props.classes.map(data => { return(
                             <ProgressNode
@@ -44,13 +36,20 @@ class ClassGroup extends React.Component {
 
                                 innerCircleDiameter = { this.props.innerCircleDiameter }
                                 innerCircleColor = { this.props.innerCircleColor }
-
-                                style={ this.styles.groupedClass }
                             />)
                     })}
         </View>
         )
     }
 }
+
+const styles = StyleSheet.create({ 
+    classContainer: {
+        flexDirection: "row-reverse",
+        flexWrap: "wrap-reverse",
+        justifyContent: "center",
+        backgroundColor: "#FFFFFF"
+    },
+})
  
 export default ClassGroup;

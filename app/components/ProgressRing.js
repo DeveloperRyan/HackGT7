@@ -3,6 +3,7 @@ import Svg, {Circle} from 'react-native-svg'
 
 export default class ProgressRing extends React.Component {
     
+    state = {}
   
     constructor(props) {
       super(props);
@@ -15,7 +16,6 @@ export default class ProgressRing extends React.Component {
       this.normalizedRadius = this.radius - (stroke / 2);
       this.circumference = this.normalizedRadius * 2 * Math.PI;
     }
-
     
     render() {
       const { diameter, stroke } = this.props;

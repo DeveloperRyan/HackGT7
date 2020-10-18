@@ -11,21 +11,17 @@ class LevelingSystem extends React.Component {
          }
     }
 
-    style = StyleSheet.create({
-        classGroupContainer: {
-            justifyContent: "space-evenly",
-        }    
-    })
+
 
     render() { 
         return (
-            <View>
+            <View style={styles.flex}>
 
                 {
                     this.props.classgroups.map((data) => { return(
                     <ClassGroup
 
-                        key={data.classGroupID}
+                        key={data.classGroupId}
 
                         classes={data.classes}
 
@@ -52,5 +48,13 @@ class LevelingSystem extends React.Component {
         
     }
 }
+
+const styles = StyleSheet.create({
+    flex: {
+        flex: 1,
+        flexGrow: 1,
+        justifyContent: "space-evenly"
+    }
+})
  
 export default LevelingSystem;

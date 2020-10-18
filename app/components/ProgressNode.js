@@ -1,7 +1,6 @@
 import React from 'react';
 import ProgressRing from "./ProgressRing"
-import { View, StyleSheet, Image } from "react-native";
-import { SvgUri } from 'react-native-svg';
+import { View, StyleSheet, Image, TouchableHighlight, Alert } from "react-native";
 
 class ProgressNode extends React.Component {
 
@@ -27,6 +26,8 @@ class ProgressNode extends React.Component {
             height: this.props.outerRingDiameter,
             backgroundColor: this.props.outerRingColor,
             borderRadius: this.props.outerRingDiameter / 2,
+
+            margin: 5,
 
             justifyContent: "center",
             alignItems: "center",
@@ -60,7 +61,7 @@ class ProgressNode extends React.Component {
 
     render() { 
         return (
-            <View style={this.styles.outerRing} >
+            <View style={this.styles.outerRing}>
                  <ProgressRing 
                     style={this.styles.progressRing}
                     diameter={ this.props.outerRingDiameter }
@@ -72,10 +73,10 @@ class ProgressNode extends React.Component {
                 <View style={this.styles.innerCircle}>
                     <Image source={{ uri: this.props.classIconURL }}
                         style={this.styles.classIcon} />
-                    {/* <SvgUri width = {this.props.classIconURLWidth} height = {this.props.classIconURLHeight} source={{ uri: this.props.classIconURL }} /> */}
                 </View>
                 </View>
             </View>
+
         );
     }
 }
