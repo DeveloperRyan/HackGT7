@@ -4,21 +4,48 @@ import ClassroomHeader from '../components/ClassroomHeader.js'
 import VideoTile from '../components/VideoTile.js'
 import BookTile from '../components/BookTile.js'
 import SectionHeader from '../components/SectionHeader.js'
+import BooksContainer from '../components/BooksContainer.js';
+import VideosContainer from '../components/VideosContainer.js';
+
+const BOOKS = [
+    {
+        id: 1,
+        image: "https://i.imgur.com/mIq171b.png"
+    },
+    {
+        id: 2,
+        image: "https://i.imgur.com/mIq171b.png"
+    },
+    {
+        id: 3,
+        image: "https://i.imgur.com/mIq171b.png"
+    }
+];
+
+const VIDEOS = [
+    {
+        id: 1,
+        image: "https://i.imgur.com/x5Neg1z.png",
+        title: "Introduction to Astronomy",
+        author: "Crash Course"
+    },
+    {
+        id: 2,
+        image: "https://i.imgur.com/xIAy1Xe.png",
+        title: "Asteroid Mining",
+        author: "Kurzgesagt"
+    }
+]
 
 function InteractiveClassScreen(props) {
     return (
         <SafeAreaView style={styles.container}>
             <ClassroomHeader title="Astronomy"/>
             <SectionHeader title={"Videos"} />
-            <VideoTile image="https://i.imgur.com/x5Neg1z.png" title="Introduction to Astronomy" author="Crash Course"/>
-            <VideoTile image="https://i.imgur.com/xIAy1Xe.png" title="Asteroid Mining" author="Kurzgesagt"/>
+            <VideosContainer videos={VIDEOS} />
             <Button title="View 13 more..." />
             <SectionHeader title={"Books"} />
-            <View style={{width: "90%", display: "flex", flexDirection: "row", justifyContent: "space-between"}}>
-                <BookTile image="https://i.imgur.com/tp5yRj7.png"/>
-                <BookTile image="https://i.imgur.com/tp5yRj7.png"/>
-                <BookTile image="https://i.imgur.com/tp5yRj7.png"/>
-            </View>
+            <BooksContainer books={BOOKS} />
             
         </SafeAreaView>
     );
