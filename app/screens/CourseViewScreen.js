@@ -1,9 +1,9 @@
-import { Dimensions, FlatList, SafeAreaView, ScrollView } from 'react-native';
+import { SafeAreaView } from 'react-native';
 import React from 'react'
 import ProfileGreeting from '../components/ProfileGreeting.js'
 import DailyGoals from '../components/DailyGoals.js'
 import CoursesContainer from '../components/CoursesContainer.js'
-import GenericButton from '../components/GenericButton.js'  
+import GenericButton from '../components/GenericButton.js'
 
 function CourseViewScreen(props) {
     const GOALS = [
